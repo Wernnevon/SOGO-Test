@@ -12,3 +12,26 @@
   font-weight: 400;
   border-bottom: 1px solid #999999;
 }
+.dashboardCardContainer{
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  justify-content: center;
+  margin: 2em 0;
+  gap: 1rem;
+}
+.card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem .7rem;
+  background-color: #fff;
+  border-radius: .5vw;
+  border: none;
+}
+.labelCard{
+  font-size: 1rem;
+}
+.labelCard:not(:first-child){
+  font-weight: 700;
+  color: #ED7856;
+}

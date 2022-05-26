@@ -16,5 +16,9 @@
     padding: 0 4em;
 }
 .menuItemContract:not(:first-child) {
-  border-left: 1px solid #999999;
+  border-left: 1px solid #8080807e;
+}
+#activeContractMenu{
+  background-color: #8080807e;
+  border: none;
 }

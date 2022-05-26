@@ -21,5 +21,9 @@
 }
 .menuItemClient:hover {
   cursor: pointer;
-  background-color: #999999;
+  background-color: #8080807e;
+}
+#activeClientMenu{
+  background-color: #8080807e;
+  border: none;
 }

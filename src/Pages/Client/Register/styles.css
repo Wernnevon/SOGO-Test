@@ -33,3 +33,27 @@
   margin: 0 1rem;
   overflow: hidden;
 }
+
+#register{
+  position: absolute;
+  bottom: 3em;
+  left: calc(50% - 255px);
+  outline: none;
+  border: none;
+  background-color: #ED7856;
+  padding: .5rem 5rem .2rem;
+  color: #fff;
+  font-family: 'Karma', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: 50ms;
+}
+
+#register:hover{
+  cursor: pointer;
+}
+
+#register:active{
+  transform: translateY(2px);
+}

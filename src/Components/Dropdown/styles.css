@@ -8,6 +8,7 @@
   border-radius: 10px;
   position: relative;
   margin: .5rem 0;
+  transition: 300ms;
 }
 #dropdownTitle {
   display: flex;
@@ -25,18 +26,16 @@
   padding: 0 1rem;
   flex-direction: column;
   margin-bottom: 1rem;
+  transition: 100ms;
 }
-.titleDetails{
+.details{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 90px;
-  font-size: 12px;
 }
 #open {
   visibility: visible;
-  height: max-content;
+  height: 130px;
 }
 #icon {
-  transform: rotate(180deg);
+  transform: rotate(180deg)!important;
 }

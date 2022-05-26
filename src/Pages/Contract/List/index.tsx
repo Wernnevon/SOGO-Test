@@ -8,13 +8,13 @@ const ListContract = () => {
     <div className="listContractContainer">
       <div className="contractListContent">
         <h2 id="contractListTitle">Todos</h2>
-        <Searchbar />
+        {/* <Searchbar /> */}
         <div className="clientList">
           <label id="filtros">Filtro</label>
+          {/* <Dropdown />
           <Dropdown />
           <Dropdown />
-          <Dropdown />
-          <Dropdown />
+          <Dropdown /> */}
         </div>
         <div className="pagination">
           <IoMdArrowDropleft size={20} color="#ED7856" />

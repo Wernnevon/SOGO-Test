@@ -1,8 +1,14 @@
-import "./styles.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import "./styles.css";
 
 const SideNav = () => {
+  const [nav, setNav] = useState("");
   const navigate = useNavigate();
+  function handleNavigation(to: string) {
+    setNav(to);
+    navigate(to);
+  }
 
   return (
     <div className="sideContainer">
@@ -10,9 +16,27 @@ const SideNav = () => {
         <span>TH</span>
       </div>
       <div id="menu" className="noSelect">
-        <label className="link" onClick={()=>navigate('dashboard')}>Dashboard</label>
-        <label className="link" onClick={()=>navigate('client')}>Clientes</label>
-        <label className="link" onClick={()=>navigate('contract')}>Contratos</label>
+        <label
+          id={nav === "" ? "active" : ""}
+          className="link"
+          onClick={() => handleNavigation("")}
+        >
+          Dashboard
+        </label>
+        <label
+          id={nav === "client" ? "active" : ""}
+          className="link"
+          onClick={() => handleNavigation("client")}
+        >
+          Clientes
+        </label>
+        <label
+          id={nav === "contract" ? "active" : ""}
+          className="link"
+          onClick={() => handleNavigation("contract")}
+        >
+          Contratos
+        </label>
       </div>
     </div>
   );

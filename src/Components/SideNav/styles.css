@@ -33,8 +33,13 @@
     width: 100%;
     justify-content: center;
     font-weight: 500;
+    padding-top: .3rem;
 }
 .link:hover{
     cursor: pointer;
-    border-bottom: 2px solid #FDF1EE;
+    background-color: #8080807e;
+}
+#active{
+    background-color: #8080807e;
+    border: none;
 }

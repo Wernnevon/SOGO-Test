@@ -16,11 +16,11 @@ const RegisterContract = () => {
         </div>
         <div className="registerItem">
           <label className="registerInputLabel">Validade:</label>
-          <Input />
+          <Input value='' handle={()=>{}}/>
         </div>
         <div className="registerItem">
           <label className="registerInputLabel">CPF:</label>
-          <Input />
+          <Input value='' handle={()=>{}}/>
         </div>
         <div className="registerItem">
           <label className="registerInputLabel">Cliente:</label>

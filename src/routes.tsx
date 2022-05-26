@@ -10,6 +10,7 @@ import Dashboard from "./Pages/Dashboard";
 const MyRoutes = () => {
   return (
     <Routes>
+      <Route index element={<Dashboard />} />
       <Route path="/client" element={<Client />}>
         <Route index element={<ListClient />} />
         <Route path="register" element={<RegisterClient />} />
@@ -18,7 +19,6 @@ const MyRoutes = () => {
         <Route index element={<ListContract />} />
         <Route path="register" element={<RegisterContract />} />
       </Route>
-      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   );
 };
