@@ -1,0 +1,25 @@
+#clientContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#titleClient {
+  font-size: 1.8rem;
+  padding-left: 2.2em;
+}
+#menuClient {
+  display: flex;
+  flex-direction: row;
+  font-weight: 400;
+  border-bottom: 1px solid #999999;
+}
+.menuItemClient {
+  padding: 0.3rem 4em 0 4em;
+}
+.menuItemClient:not(:first-child) {
+  border-left: 1px solid #999999;
+}
+.menuItemClient:hover {
+  cursor: pointer;
+  background-color: #999999;
+}

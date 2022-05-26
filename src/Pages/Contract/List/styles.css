@@ -1,0 +1,19 @@
+.listContractContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contractListContent {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 4rem;
+  box-sizing: border-box;
+}
+#contractListTitle {
+  margin: 0;
+  text-align: center;
+}
+#filtros {
+  text-align: right;
+  margin: 20px 10px -10px;
+}

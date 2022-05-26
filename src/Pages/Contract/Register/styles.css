@@ -1,0 +1,25 @@
+.registerContractContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.registerContractForm {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  box-sizing: border-box;
+  margin: 2rem 0rem;
+}
+.registerFormSectionTitle {
+  text-align: center;
+}
+.registerItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.5rem 4rem;
+}
+.registerInputLabel {
+  min-width: max-content;
+  margin-right: 0.3rem;
+}

@@ -1,0 +1,20 @@
+#contractContainer {
+  display: flex;
+  flex-direction: column;
+}
+#titleContract {
+  font-size: 1.8rem;
+  padding-left: 2.2em;
+}
+#menuContract {
+  display: flex;
+  flex-direction: row;
+  font-weight: 400;
+  border-bottom: 1px solid #999999;
+}
+.menuItemContract{
+    padding: 0 4em;
+}
+.menuItemContract:not(:first-child) {
+  border-left: 1px solid #999999;
+}

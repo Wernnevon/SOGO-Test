@@ -1,0 +1,14 @@
+#dashboardContainer {
+  display: flex;
+  flex-direction: column;
+}
+#titleDashboard {
+  font-size: 1.8rem;
+  padding-left: 2.2em;
+}
+#menuDashboard {
+  display: flex;
+  flex-direction: row;
+  font-weight: 400;
+  border-bottom: 1px solid #999999;
+}

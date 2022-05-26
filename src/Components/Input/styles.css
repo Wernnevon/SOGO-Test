@@ -1,0 +1,20 @@
+#inputField{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    border: none;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    font-size: 1.1rem;
+    color: #323232;
+    box-sizing: border-box;
+    padding: .5rem .5rem .3rem;
+    font-family: 'Karma', serif;
+    background-color: #D9D9D9;
+}
+#inputField:focus-within{
+    border-color:#ED7856;
+}
