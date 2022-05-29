@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useNavigate, Outlet } from "react-router-dom";
+import { useNavigate, Outlet, useLocation } from "react-router-dom";
 import "./styles.css";
 
 const Client = () => {
-  const [menuNav, setMenuNav] = useState("");
+  const {pathname} = useLocation();
+  const [menuNav, setMenuNav] = useState(pathname.split('/')[2]);
   const navigate = useNavigate();
 
   function handleNavigation(to: string) {
@@ -16,7 +17,7 @@ const Client = () => {
       <h3 id="titleClient">Cliente</h3>
       <div id="menuClient" className="noSelect">
         <label
-          id={menuNav === "" ? "activeClientMenu" : ""}
+          id={!menuNav? "activeClientMenu" : ""}
           onClick={() => handleNavigation("")}
           className="menuItemClient"
         >

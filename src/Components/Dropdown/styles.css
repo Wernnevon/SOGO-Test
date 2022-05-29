@@ -32,9 +32,13 @@
   display: flex;
   justify-content: space-between;
 }
-#open {
+#openClient {
   visibility: visible;
   height: 130px;
+}
+#openContract {
+  visibility: visible;
+  height: 180px;
 }
 #icon {
   transform: rotate(180deg)!important;

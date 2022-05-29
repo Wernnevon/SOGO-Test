@@ -9,6 +9,7 @@ interface Endereco{
     pais: string;
 }
 export default interface ClientModel{
+    id: string;
     nome: string;
     sobrenome: string;
     cpf:string;

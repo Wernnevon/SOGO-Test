@@ -4,10 +4,11 @@ interface Params{
   value: any;
   handle: Function;
   type?: string
+  options?: any;
 }
 
-const Input = ({value, handle, type}: Params) => {
+const Input = ({value, handle, options, type}: Params) => {
 
-  return <input value={value} onChange={(e)=> handle(e.target.value)} id="inputField" type={type} />;
+  return <input value={options? options(value): value} onChange={(e)=> handle(e.target.value)} id="inputField" type={type} />;
 };
 export default Input;

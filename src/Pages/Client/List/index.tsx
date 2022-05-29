@@ -1,6 +1,6 @@
-import Dropdown from "../../../Components/Dropdown";
+import DropdownClients from "../../../Components/Dropdown/DropdownClients";
 import "./styles.css";
-import Searchbar from "../../../Components/Searchbar";
+import SearchbarClient from "../../../Components/Searchbar/Client";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import { useState, useEffect } from "react";
 import ClientModel from "../../../Model/client";
@@ -8,23 +8,26 @@ import ClientApi from "../../../Services/clientsService";
 
 const ListClient = () => {
   const [clients, setClients] = useState<ClientModel[]>([]);
-  const [clientList, setClientList] = useState<ClientModel[]>([])
+  const [clientList, setClientList] = useState<ClientModel[]>([]);
+  const [actualPage, setActualPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(0);
 
   useEffect(() => {
-    ClientApi.get("/pessoas").then(({ data }) => {
+    ClientApi.get(`?_page=${actualPage}&_limit=4`).then(({ data,headers }) => {
       setClients(data);
       setClientList(data);
+      setTotalPage(Math.ceil(parseInt(headers["x-total-count"])/4))
     });
-  }, []);
+  }, [actualPage]);
 
   return (
     <div className="listClientContainer">
       <div className="clientListContent">
-        <h2 id="clientListTitle">Todos</h2>
-        <Searchbar filter={setClients} list={clientList} />
+        <h2 id="clientListTitle">Todos os Clientes</h2>
+        <SearchbarClient filter={setClients} list={clientList} />
         <div className="clientList">
           {clients.map((client) => (
-            <Dropdown
+            <DropdownClients
               nome={client.nome}
               dataDeNascimento={client.dataDeNascimento}
               cpf={client.cpf}
@@ -33,29 +36,10 @@ const ListClient = () => {
             />
           ))}
         </div>
-        <div className="pagination">
-          <IoMdArrowDropleft size={20} color="#ED7856" />
-          <label>1 de {(clients.length/4)}</label>
-          <IoMdArrowDropright size={20} color="#ED7856" />
-        </div>
-      </div>
-      <div>
-        <h2>Recentes</h2>
-        <div className="clientList">
-          {clientList.map((client) => (
-            <Dropdown
-              nome={client.nome}
-              dataDeNascimento={client.dataDeNascimento}
-              cpf={client.cpf}
-              cidade={client.endereco.cidade}
-              key={client.cpf}
-            />
-          ))}
-        </div>
-        <div className="pagination">
-          <IoMdArrowDropleft size={20} color="#ED7856" />
-          <label>1 de {(clients.length/4)}</label>
-          <IoMdArrowDropright size={20} color="#ED7856" />
+        <div className="paginationClient">
+        <IoMdArrowDropleft onClick={()=>setActualPage( actualPage<=1 ?1: actualPage-1)} size={20} color="#ED7856" />
+          <label className="noSelect">{actualPage} de {totalPage}</label>
+          <IoMdArrowDropright onClick={()=>setActualPage( actualPage>=totalPage?totalPage:actualPage+1)} size={20} color="#ED7856" />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 export default interface ContractModel{
-    numeroDeContrato: string;
+    id: string;
     dataDeRegistro: Date;
     validade: Date;
     pessoaCPF: string;
+    nomeCliente: string;
 }

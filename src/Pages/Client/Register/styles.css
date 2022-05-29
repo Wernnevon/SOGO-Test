@@ -11,6 +11,7 @@
   grid-template-columns: 50% 50%;
   box-sizing: border-box;
   margin: -1rem 0rem 2rem;
+  position: relative;
 }
 #formTitle {
   text-align: center;
@@ -21,6 +22,15 @@
   align-items: center;
   margin: 0.5rem 0.4rem;
 }
+.inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.inner:first-child{
+margin-right: 0.5rem;
+
+}
 .inputLabel {
   min-width: max-content;
   margin-right: 0.3rem;
@@ -29,19 +39,18 @@
 .containersForm {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   margin: 0 1rem;
-  overflow: hidden;
 }
 
-#register{
+#registerClient{
   position: absolute;
   bottom: 3em;
-  left: calc(50% - 255px);
+  left: calc(50% - 190px);
+  width: max-content;
   outline: none;
   border: none;
   background-color: #ED7856;
-  padding: .5rem 5rem .2rem;
+  padding: .5rem 3rem .2rem;
   color: #fff;
   font-family: 'Karma', serif;
   font-weight: 700;
@@ -50,10 +59,34 @@
   transition: 50ms;
 }
 
-#register:hover{
+#registerClient:hover{
   cursor: pointer;
 }
 
-#register:active{
+#registerClient:active{
   transform: translateY(2px);
+}
+
+@media (max-width: 1024px){
+  .clientRegisterForm {
+    display: flex;
+    flex-direction: column;
+    height: 420px;
+    overflow-Y: auto;
+    margin: -1.5em 0 0;
+  }
+  .containersForm{
+    position: relative;
+  }
+  .formSectionTitle{
+    text-align: center;
+  }
+  #registerClient{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin: 1rem 0;
+    align-self: center;
+    text-align: center;
+  }
 }

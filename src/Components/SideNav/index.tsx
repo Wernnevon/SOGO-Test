@@ -1,10 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import "./styles.css";
 
 const SideNav = () => {
-  const [nav, setNav] = useState("");
   const navigate = useNavigate();
+  const {pathname} = useLocation()
+  const [nav, setNav] = useState(pathname.split('/')[1]);
   function handleNavigation(to: string) {
     setNav(to);
     navigate(to);
@@ -24,14 +25,14 @@ const SideNav = () => {
           Dashboard
         </label>
         <label
-          id={nav === "client" ? "active" : ""}
+          id={pathname.split('/')[1] === "client" ? "active" : ""}
           className="link"
           onClick={() => handleNavigation("client")}
         >
           Clientes
         </label>
         <label
-          id={nav === "contract" ? "active" : ""}
+          id={pathname.split('/')[1] === "contract" ? "active" : ""}
           className="link"
           onClick={() => handleNavigation("contract")}
         >

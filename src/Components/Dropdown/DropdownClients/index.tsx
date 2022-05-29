@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
-import "./styles.css";
+import "../styles.css";
 
 interface PropsDropdown {
   nome: string;
@@ -9,22 +9,22 @@ interface PropsDropdown {
   cidade: string;
 }
 
-const Dropdown = ({ nome, cpf, dataDeNascimento, cidade }: PropsDropdown) => {
+const DropdownClients = ({ nome, cpf, dataDeNascimento, cidade }: PropsDropdown) => {
   const [toggle, setToggle] = useState(false);
   return (
-    <div className="dropdownContainer" id={toggle ? "open" : ""}>
+    <div className="dropdownContainer" id={toggle ? "openClient" : ""}>
       <div className="noSelect" onClick={() => setToggle(!toggle)} id="dropdownTitle">
         <label>{nome}</label>
         <IoMdArrowDropdown size={20} id={toggle ? "icon" : ""} />
       </div>
-      <div id={toggle ? "open" : ""} className="dropdownBody">
+      <div id={toggle ? "openClient" : ""} className="dropdownBody">
         <div className="details">
           <label>CPF</label>
           <label>{cpf}</label>
         </div>
         <div className="details">
           <label>Nascimento</label>
-          <label>{dataDeNascimento.toString()}</label>
+          <label>{new Date(dataDeNascimento).toLocaleDateString()}</label>
         </div>
         <div className="details">
           <label>Cidade</label>
@@ -34,4 +34,4 @@ const Dropdown = ({ nome, cpf, dataDeNascimento, cidade }: PropsDropdown) => {
     </div>
   );
 };
-export default Dropdown;
+export default DropdownClients;

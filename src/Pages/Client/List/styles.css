@@ -1,14 +1,13 @@
 .listClientContainer {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  margin: 2em 0;
-  overflow: hidden;
 }
 .clientListContent{
   display: flex;
   flex-direction: column;
+  margin: 2em 4rem;
+  box-sizing: border-box;
 }
 .clientList{
   display: flex;
@@ -17,18 +16,19 @@
   height: 250px;
   margin-top: 1em;
 }
-.pagination{
+.paginationClient{
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: .4em;
 }
-.pagination label{
+.paginationClient label{
   margin-top: 3px;
   font-size: 13px;
 }
 #clientListTitle{
   margin: 0;
+  text-align: center;
 }
 ::-webkit-scrollbar {
   width: 5px;

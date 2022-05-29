@@ -1,7 +1,10 @@
 import { useState } from "react";
 import Input from "../../../Components/Input";
 import { isEmpty } from "../../../Components/Utils/clientMiddleware";
+import { CPFMask, CEPMask } from "../../../Components/Utils/mask";
 import UUID4Generate from "../../../Components/Utils/uuid";
+import { useToastContext } from "../../../Context/Toast";
+import ClientModel from "../../../Model/client";
 import ClientApi from "../../../Services/clientsService";
 import "./styles.css";
 
@@ -9,7 +12,7 @@ const RegisterClient = () => {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCpf] = useState("");
-  const [nascimento, setNascimento] = useState(new Date());
+  const [nascimento, setNascimento] = useState(new Date(0));
   const [rua, setRua] = useState("");
   const [numero, setNumero] = useState(0);
   const [bairro, setBairro] = useState("");
@@ -19,45 +22,49 @@ const RegisterClient = () => {
   const [uf, setUf] = useState("");
   const [pais, setPais] = useState("");
 
+  const addToast = useToastContext();
+
+  function clear() {
+    setNome("");
+    setSobrenome("");
+    setCpf("");
+    setNascimento(new Date(0));
+    setRua("");
+    setNumero(0);
+    setBairro("");
+    setComplemento("");
+    setCep("");
+    setCidade("");
+    setUf("");
+    setPais("");
+  }
+
   function handleSubmit() {
-    const newClient = {
+    const newClient: ClientModel = {
       id: UUID4Generate(),
       nome,
       sobrenome,
-      cpf,
-      dataDeNascimento: nascimento,
+      cpf: CPFMask(cpf),
+      dataDeNascimento: new Date(nascimento),
       endereco: {
         rua,
         numero,
         bairro,
         complemento,
-        cep,
+        cep: CEPMask(cep),
         cidade,
         uf,
         pais,
       },
-    }
-    try {
-      console.log(isEmpty(newClient));
-      if(!isEmpty(newClient)) {
-        // ClientApi.post("/pessoas", newClient);
-      }
-      else alert('Preencha todos os campos antes de realizar o cadastro')
-    } catch (error) {
-      console.error(`error: ${error}`)
-    }
-    // setNome('');
-    // setSobrenome("");
-    // setCpf("");
-    // setNascimento(new Date());
-    // setRua("");
-    // setNumero(0);
-    // setBairro("");
-    // setComplemento("");
-    // setCep("");
-    // setCidade("");
-    // setUf("");
-    // setPais("");
+    };
+      if (!isEmpty(newClient)) {
+        ClientApi.post("", newClient).then(() => {
+          addToast("Cadastro Realizado com sucesso", "sucess");
+          clear();
+        }, (error)=>{
+          addToast(`erro: ${error}`, 'error')
+        });
+      } else addToast("Preencha todos os campos antes de realizar o cadastro");
   }
 
   return (
@@ -76,7 +83,7 @@ const RegisterClient = () => {
           </div>
           <div className="item">
             <label className="inputLabel">CPF:</label>
-            <Input value={cpf} handle={setCpf} />
+            <Input options={CPFMask} value={cpf} handle={setCpf} />
           </div>
           <div className="item">
             <label className="inputLabel">Data de Nascimento:</label>
@@ -90,11 +97,11 @@ const RegisterClient = () => {
             <Input value={rua} handle={setRua} />
           </div>
           <div className="item">
-            <div className="item">
+            <div className="inner">
               <label className="inputLabel">Número:</label>
-              <Input value={numero} handle={setNumero} />
+              <Input type="number" value={numero} handle={setNumero} />
             </div>
-            <div className="item">
+            <div className="inner">
               <label className="inputLabel">Bairro:</label>
               <Input value={bairro} handle={setBairro} />
             </div>
@@ -105,27 +112,27 @@ const RegisterClient = () => {
           </div>
           <div className="item">
             <label className="inputLabel">CEP:</label>
-            <Input value={cep} handle={setCep} />
+            <Input options={CEPMask} value={cep} handle={setCep} />
           </div>
           <div className="item">
             <label className="inputLabel">Cidade:</label>
             <Input value={cidade} handle={setCidade} />
           </div>
           <div className="item">
-            <div className="item">
+            <div className="inner">
               <label className="inputLabel">UF:</label>
               <Input value={uf} handle={setUf} />
             </div>
-            <div className="item">
+            <div className="inner">
               <label className="inputLabel">Pais:</label>
               <Input value={pais} handle={setPais} />
             </div>
           </div>
         </div>
+        <button id="registerClient" onClick={handleSubmit} className="noSelect">
+          Cadastrar
+        </button>
       </div>
-      <button id="register" onClick={handleSubmit} className="noSelect">
-        Cadastrar
-      </button>
     </div>
   );
 };

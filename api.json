@@ -4,7 +4,7 @@
       "nome": "Clara",
       "sobrenome": "Nair Pires",
       "cpf": "726.579.920-80",
-      "dataDeNascimento": "18/02/1971",
+      "dataDeNascimento": "1971-02-18",
       "endereco": {
         "rua": "Quadra Quadra 35 Conjunto E",
         "numero": 636,
@@ -20,7 +20,7 @@
       "nome": "Beatriz Márcia",
       "sobrenome": "Maitê Nunes",
       "cpf": "722.382.652-52",
-      "dataDeNascimento": "23/04/1945",
+      "dataDeNascimento": "1945-04-23",
       "endereco": {
         "rua": "Beco Emiliano",
         "numero": 183,
@@ -36,7 +36,7 @@
       "nome": "Vinicius José",
       "sobrenome": "Thiago da Silva",
       "cpf": "452.838.606-20",
-      "dataDeNascimento": "05/03/1963",
+      "dataDeNascimento": "1963-03-05",
       "endereco": {
         "rua": "Quadra 108 Norte Alameda 5",
         "numero": 789,
@@ -52,7 +52,7 @@
       "nome": "Noah Breno",
       "sobrenome": "Araújo",
       "cpf": "622.174.333-85",
-      "dataDeNascimento": "24/05/1946",
+      "dataDeNascimento": "1946-05-24",
       "endereco": {
         "rua": "Rua Estrela Bonita",
         "numero": 299,
@@ -63,6 +63,88 @@
         "uf": "RR",
         "pais": "Brasil"
       }
+    },
+    {
+      "id": "d8993a70-319f-5482-8f17-844208ec9913",
+      "nome": "André Felipe",
+      "sobrenome": "Brito",
+      "cpf": "123.423.423-43",
+      "dataDeNascimento": "1992-05-23",
+      "endereco": {
+        "rua": "Rua da Paz",
+        "numero": "320",
+        "bairro": "Centro",
+        "complemento": "",
+        "cep": "58910000",
+        "cidade": "São João do Rio do Peixe",
+        "uf": "PB",
+        "pais": "Brasil"
+      }
+    }
+  ],
+  "contratos": [
+    {
+      "id": "a6f61a8c-1453-a625-9561-53678320bf43",
+      "dataDeRegistro": "2022-05-27T19:17:25.192Z",
+      "pessoaCPF": "726.579.920-80",
+      "validade": "2022-06-04T00:00:00.000Z",
+      "nomeCliente": "Clara Nair Pires"
+    },
+    {
+      "id": "a493e921-7082-b3e4-ba3d-5be69c3c8cf7",
+      "dataDeRegistro": "2022-05-28T00:59:08.109Z",
+      "pessoaCPF": "722.382.652-52",
+      "validade": "2022-05-28T00:00:00.000Z",
+      "nomeCliente": "Beatriz Márcia Maitê Nunes"
+    },
+    {
+      "id": "0f5ef814-08b9-5220-b52d-c3ae8479de51",
+      "dataDeRegistro": "2022-05-28T00:59:26.357Z",
+      "pessoaCPF": "452.838.606-20",
+      "validade": "2022-06-30T00:00:00.000Z",
+      "nomeCliente": "Vinicius José Thiago da Silva"
+    },
+    {
+      "id": "17aa828c-8ce0-9c25-83bf-216722548c86",
+      "dataDeRegistro": "2022-05-28T01:00:07.092Z",
+      "pessoaCPF": "622.174.333-85",
+      "validade": "2022-07-15T00:00:00.000Z",
+      "nomeCliente": "Noah Breno Araújo"
+    },
+    {
+      "id": "7471e620-4b7e-1e17-b817-5166adce31d9",
+      "dataDeRegistro": "2022-05-28T01:00:14.907Z",
+      "pessoaCPF": "123.423.423-43",
+      "validade": "2022-06-13T00:00:00.000Z",
+      "nomeCliente": "André Felipe Brito"
+    },
+    {
+      "id": "a48a4614-1f48-5b22-90b0-1240985c2761",
+      "dataDeRegistro": "2022-05-28T13:23:25.682Z",
+      "pessoaCPF": "726.579.920-80",
+      "validade": "2022-05-28T00:00:00.000Z",
+      "nomeCliente": "Clara Nair Pires"
+    },
+    {
+      "id": "7c11038a-ec89-229d-9e59-2a83570d6f52",
+      "dataDeRegistro": "2022-04-29T02:41:53.639Z",
+      "pessoaCPF": "123.423.423-43",
+      "validade": "2022-05-22T00:00:00.000Z",
+      "nomeCliente": "André Felipe Brito"
+    },
+    {
+      "id": "ec17e9a2-9e1d-d84a-99cb-917b694abc97",
+      "dataDeRegistro": "2022-05-29T03:30:47.000Z",
+      "pessoaCPF": "726.579.920-80",
+      "validade": "2022-05-29T00:00:00.000Z",
+      "nomeCliente": "Clara Nair Pires"
+    },
+    {
+      "id": "74a4118b-c2b1-742f-970c-14ccddeeeab6",
+      "dataDeRegistro": "2022-05-29T03:47:42.368Z",
+      "pessoaCPF": "452.838.606-20",
+      "validade": "2022-06-02T00:00:00.000Z",
+      "nomeCliente": "Vinicius José Thiago da Silva"
     }
   ]
 }

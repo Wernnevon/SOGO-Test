@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  position: relative;
 }
 .registerContractForm {
   display: grid;
@@ -22,4 +23,34 @@
 .registerInputLabel {
   min-width: max-content;
   margin-right: 0.3rem;
+}
+#registerContract{
+  position: absolute;
+  bottom: -3em;
+  outline: none;
+  border: none;
+  background-color: #ED7856;
+  padding: .5rem 5rem .2rem;
+  color: #fff;
+  font-family: 'Karma', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: 50ms;
+  align-self: center;
+}
+
+#registerContract:hover{
+  cursor: pointer;
+}
+
+#registerContract:active{
+  transform: translateY(2px);
+}
+
+@media (max-width: 1024px){
+  .registerContractForm {
+    display: flex;
+    flex-direction: column;
+  }
 }
